@@ -4,7 +4,7 @@
 // Preencher exclusivamente com o gabarito oficial conferido, na ordem das 27 questões (A, B, C ou D).
 // Enquanto não estiver validado, o relatório mostra respondidas e não inventa acertos.
 const OFFICIAL_KEYS = Array(ITEMS.length).fill(null);
-const ACCESS_PASSWORD='EU SEREI APROVADO NO CFC';
+const ACCESS_PASSWORD='CFC FGV';
 const identityKey='moreira_cpc00_aluno_identidade';
 let studentName='';
 function enterQuiz(ev){ev.preventDefault();const n=document.getElementById('studentName').value.trim().replace(/\s+/g,' ');const pass=document.getElementById('studentPassword').value.trim().replace(/\s+/g,' ').toLocaleUpperCase('pt-BR');if(n.length<3){document.getElementById('loginError').textContent='Informe seu nome completo.';return false}if(pass!==ACCESS_PASSWORD){document.getElementById('loginError').textContent='Senha incorreta. Solicite a senha ao professor.';return false}studentName=n;sessionStorage.setItem(identityKey,n);document.getElementById('studentBadge').textContent=n;document.getElementById('gate').hidden=true;render();return false}
